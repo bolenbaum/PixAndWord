@@ -20,4 +20,8 @@ class Tile{
     func canPlay(){
         isInPlay = true
     }
+    init(tileName: String, filePath: String){
+        self.name = tileName
+        self.spriteFilePath = filePath
+    }
 }
