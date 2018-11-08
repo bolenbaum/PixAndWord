@@ -8,7 +8,7 @@
 
 import Foundation
 class Level{
-    var wordAvail: [String]
+    var wordAvail: String
     var hasBeaten = false
     let picNum = 4
     var picLoc: [String]
@@ -18,8 +18,8 @@ class Level{
     func addPicFilePath(filePath:String){
         picLoc.append(filePath)
     }
-    init{
-        self.wordAvail = wordAvail
-        self.picLoc = picLoc
+    init(wordForLevel:String, filePaths: [String]){
+        self.wordAvail = wordForLevel
+        self.picLoc = filePaths
     }
 }
