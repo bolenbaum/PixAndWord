@@ -8,8 +8,8 @@
 
 import Foundation
 
-class gameModel {
-    static let sharedInstance = gameModel()
+class GameModel {
+    static let sharedInstance = GameModel()
     
     
 }
