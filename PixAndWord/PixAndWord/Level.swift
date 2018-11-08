@@ -12,9 +12,7 @@ class Level{
     var hasBeaten = false
     let picNum = 4
     var picLoc: [String]
-    func setWords(){
-        
-    }
+    
     func addPicFilePath(filePath:String){
         picLoc.append(filePath)
     }
