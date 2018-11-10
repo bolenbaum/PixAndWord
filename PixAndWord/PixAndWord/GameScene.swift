@@ -10,7 +10,12 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    
+    struct  Physics{
+        static let none      : UInt32 = 0
+        static let all       : UInt32 = UInt32.max
+        static let holder   : UInt32 = 0b1       // 1
+        static let tiles: UInt32 = 0b10
+    }
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
@@ -107,4 +112,16 @@ class GameScene: SKScene {
         
         self.lastUpdateTime = currentTime
     }
+    func addTiles(){
+        let tile = SKSpriteNode(imageNamed: "tile")
+        addChild(tile)
+    }
+    func addLetters(){
+        let letter = SKSpriteNode(imageNamed: "letter")
+        addChild(letter)
+    }
+    
+}
+extension GameScene: SKPhysicsContactDelegate{
+    
 }
