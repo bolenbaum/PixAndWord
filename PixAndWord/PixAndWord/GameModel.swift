@@ -10,7 +10,7 @@ import Foundation
 
 class GameModel {
     static let sharedInstance = GameModel()
-    
+    let levels = [Level(levelNum: 1, wordForLevel: "apple", filePaths: <#T##[String]#>), Level(levelNum: 2, wordForLevel: "baseball", filePaths: <#T##[String]#>)]
     
 }
 
