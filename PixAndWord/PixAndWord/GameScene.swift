@@ -9,7 +9,10 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene{
+    override func didMove(to view: SKView) {
+        
+    }
     struct  Physics{
         static let none      : UInt32 = 0
         static let all       : UInt32 = UInt32.max
