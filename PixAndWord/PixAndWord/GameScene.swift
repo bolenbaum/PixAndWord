@@ -25,25 +25,32 @@ class GameScene: SKScene{
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
-    private var counter: SKLabelNode?
-    var counterCount: Int = 4000{
-        didSet{
-        counter?.text = "\(counterCount)"
-        }
+    private var counter: SKLabelNode!
+    var counterCount: Int = 4000
+    var time = Timer()
+    var isTimerRunning = false
+    func runTimer() {
+        time = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(GameScene.updateTimer)), userInfo: nil, repeats: true)
+    }
+    @objc func updateTimer(){
+        counterCount -= 1     //This will decrement(count down)the seconds.
+        counter.text = "\(counterCount)" //This will update the label.
     }
     override func sceneDidLoad() {
-
+        //counter = SKLabelNode(fontNamed: "Chalkduster")
+        //counter.text = "\(counterCount)"
         self.lastUpdateTime = 0
-        counter?.fontColor = SKColor.white
+        //counter?.fontSize = 12
+        //counter?.fontColor = SKColor.white
+        //counter?.position = CGPoint(x: frame.midX, y: 160)
         // Get label node from scene and store it for use later
-        self.counter = self.childNode(withName: "counter") as? SKLabelNode
+        //addChild(counter!)
+        //runTimer()
+        //updateTimer()
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
-        if let counter = self.counter{
-            counter.text = ""
         }
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
