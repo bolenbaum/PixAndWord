@@ -9,26 +9,42 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
-    
+class GameScene: SKScene{
+    override func didMove(to view: SKView) {
+        
+    }
+    struct  Physics{
+        static let none      : UInt32 = 0
+        static let all       : UInt32 = UInt32.max
+        static let holder   : UInt32 = 0b1       // 1
+        static let tiles: UInt32 = 0b10
+    }
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
-    
+    private var counter: SKLabelNode?
+    var counterCount: Int = 4000{
+        didSet{
+        counter?.text = "\(counterCount)"
+        }
+    }
     override func sceneDidLoad() {
 
         self.lastUpdateTime = 0
-        
+        counter?.fontColor = SKColor.white
         // Get label node from scene and store it for use later
+        self.counter = self.childNode(withName: "counter") as? SKLabelNode
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
-        
+        if let counter = self.counter{
+            counter.text = ""
+        }
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
@@ -107,4 +123,16 @@ class GameScene: SKScene {
         
         self.lastUpdateTime = currentTime
     }
+    func addTiles(){
+        let tile = SKSpriteNode(imageNamed: "tile")
+        addChild(tile)
+    }
+    func addLetters(){
+        let letter = SKSpriteNode(imageNamed: "letter")
+        addChild(letter)
+    }
+    
+}
+extension GameScene: SKPhysicsContactDelegate{
+    
 }

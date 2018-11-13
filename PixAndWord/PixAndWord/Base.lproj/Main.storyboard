@@ -22,6 +22,9 @@
                                 <rect key="frame" x="150" y="200" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Game"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="BKJ-Fu-slB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pix and Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOK-lF-KLf">
                                 <rect key="frame" x="137" y="70" width="101" height="21"/>
@@ -63,6 +66,14 @@
                                 <rect key="frame" x="191" y="156" width="160" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXs-NX-sDc">
+                                <rect key="frame" x="321" y="292" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hint"/>
+                                <connections>
+                                    <segue destination="sCy-bM-hUg" kind="show" id="4sn-jH-qdk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -81,5 +92,52 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="gfc-fx-jcU">
+            <objects>
+                <viewController id="sCy-bM-hUg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ALE-9p-R2e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFR-01-4sL">
+                                <rect key="frame" x="171.5" y="42" width="32" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint Go Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhC-d3-xQ8">
+                                <rect key="frame" x="138" y="71" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0h-Vj-Nqn">
+                                <rect key="frame" x="137.5" y="115" width="100" height="30"/>
+                                <state key="normal" title="Resume Game"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="S76-cf-eTe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UFR-01-4sL" firstAttribute="centerY" secondItem="ALE-9p-R2e" secondAttribute="centerY" constant="-281" id="Krx-QL-FR2"/>
+                            <constraint firstItem="Q0h-Vj-Nqn" firstAttribute="centerX" secondItem="ALE-9p-R2e" secondAttribute="centerX" id="PMi-KZ-y0A"/>
+                            <constraint firstItem="UFR-01-4sL" firstAttribute="centerX" secondItem="ALE-9p-R2e" secondAttribute="centerX" id="QI8-MH-100"/>
+                            <constraint firstItem="YhC-d3-xQ8" firstAttribute="centerX" secondItem="ALE-9p-R2e" secondAttribute="centerX" id="R5c-O9-j9r"/>
+                            <constraint firstItem="YhC-d3-xQ8" firstAttribute="centerY" secondItem="ALE-9p-R2e" secondAttribute="centerY" constant="-252" id="aBd-lg-OzD"/>
+                            <constraint firstItem="Q0h-Vj-Nqn" firstAttribute="centerY" secondItem="ALE-9p-R2e" secondAttribute="centerY" constant="-203.5" id="u0F-uP-AAp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rbf-rR-c4v"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FO-9K-674" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="134"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BKJ-Fu-slB"/>
+    </inferredMetricsTieBreakers>
 </document>
