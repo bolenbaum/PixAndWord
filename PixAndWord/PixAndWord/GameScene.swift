@@ -64,6 +64,7 @@ class GameScene: SKScene{
                                               SKAction.fadeOut(withDuration: 0.5),
                                               SKAction.removeFromParent()]))
         }
+        addTiles()
     }
     
     
@@ -131,12 +132,15 @@ class GameScene: SKScene{
         self.lastUpdateTime = currentTime
     }
     func addTiles(){
-        let tile = SKSpriteNode(imageNamed: "tile")
+        let tile = SKSpriteNode(imageNamed: "Assest.xcassets/Images/GameObjects/Tile.png")
         addChild(tile)
     }
     func addLetters(){
-        let letter = SKSpriteNode(imageNamed: "letter")
+        
+       //let letter = SKSpriteNode(imageNamed: GameModel.sharedInstance.sendFilePath(fileName: GameModel.sharedInstance.))
+        GameModel.sharedInstance.addRealLet()
         addChild(letter)
+        
     }
     
 }

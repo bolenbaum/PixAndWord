@@ -9,7 +9,7 @@
 import Foundation
 class Level{
     var levelNum: Int
-    var wordAvail: String
+    var word: String
     var hasBeaten = false
     let picNum = 4
     var picLoc: [String]
@@ -19,7 +19,7 @@ class Level{
     }
     init(levelNum: Int, wordForLevel:String, filePaths: [String]){
         self.levelNum = levelNum
-        self.wordAvail = wordForLevel
+        self.word = wordForLevel
         self.picLoc = filePaths
     }
 }

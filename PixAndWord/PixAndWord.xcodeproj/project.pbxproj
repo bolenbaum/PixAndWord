@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		03B61CC72194C948006F6CF0 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B61CC62194C947006F6CF0 /* Tile.swift */; };
 		03B61CC92194C95E006F6CF0 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B61CC82194C95E006F6CF0 /* Level.swift */; };
+		03F9B5C1219CB1CC00ED5466 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 03F9B5C0219CB1CB00ED5466 /* Images */; };
 		E703031B219490E100F337F5 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E703031A219490E100F337F5 /* GameModel.swift */; };
 		E703031D219AAC0100F337F5 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E703031C219AAC0100F337F5 /* MainScreenViewController.swift */; };
 		E703035F219AB2F100F337F5 /* GiveUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E703035E219AB2F100F337F5 /* GiveUpViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		03B61CC62194C947006F6CF0 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		03B61CC82194C95E006F6CF0 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		03F9B5C0219CB1CB00ED5466 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		E703031A219490E100F337F5 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		E703031C219AAC0100F337F5 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		E703035E219AB2F100F337F5 /* GiveUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveUpViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				E703035E219AB2F100F337F5 /* GiveUpViewController.swift */,
 				E703031C219AAC0100F337F5 /* MainScreenViewController.swift */,
 				E7481193218CF3FB00A2F5F6 /* Assets.xcassets */,
+				03F9B5C0219CB1CB00ED5466 /* Images */,
 				E7481195218CF3FB00A2F5F6 /* LaunchScreen.storyboard */,
 				E7481198218CF3FB00A2F5F6 /* Info.plist */,
 			);
@@ -260,6 +263,7 @@
 				E7481189218CF3FB00A2F5F6 /* GameScene.sks in Resources */,
 				E7481194218CF3FB00A2F5F6 /* Assets.xcassets in Resources */,
 				E7481197218CF3FB00A2F5F6 /* LaunchScreen.storyboard in Resources */,
+				03F9B5C1219CB1CC00ED5466 /* Images in Resources */,
 				E748118B218CF3FB00A2F5F6 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
