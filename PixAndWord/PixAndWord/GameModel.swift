@@ -51,5 +51,7 @@ class GameModel {
         var filePathSend = filePathAlpha + file + ext
         return filePathSend
     }
+    func nextLevel(){
+        levNum += 1
+    }
 }
-

@@ -136,11 +136,11 @@ class GameScene: SKScene{
         addChild(tile)
     }
     func addLetters(){
-        
-       //let letter = SKSpriteNode(imageNamed: GameModel.sharedInstance.sendFilePath(fileName: GameModel.sharedInstance.))
+        var tex = GameModel.sharedInstance.wordToLetters(word: GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word)
+        for 
+       let letter = SKSpriteNode(imageNamed: GameModel.sharedInstance.sendFilePath(fileName: GameModel.sharedInstance.))
         GameModel.sharedInstance.addRealLet()
         addChild(letter)
-        
     }
     
 }
