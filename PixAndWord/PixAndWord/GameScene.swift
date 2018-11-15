@@ -64,7 +64,7 @@ class GameScene: SKScene{
                                               SKAction.removeFromParent()]))
         }
         addTiles()
-        //addLetters()
+        addLetters()
     }
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -134,7 +134,6 @@ class GameScene: SKScene{
     func random() -> CGFloat {
         return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
     }
-
     func randomat(first: CGFloat, second: CGFloat)-> CGFloat{
         return random() * (second - first) + first
     }
