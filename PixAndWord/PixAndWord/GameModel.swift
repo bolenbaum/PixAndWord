@@ -11,6 +11,7 @@ import Foundation
 class GameModel {
     static let sharedInstance = GameModel(k: 0)
     //var letters: [Character] = []
+    let version = "Alpha 0.0.9"
     var k = 0
     var levNum = 0
     var pool:[Tile] = []

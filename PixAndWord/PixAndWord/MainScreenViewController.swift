@@ -12,15 +12,18 @@ class MainScreenViewController: UIViewController {
 
     @IBOutlet weak var newGameButton: UIButton!
     
+    @IBOutlet weak var version: UILabel!
     
     @IBAction func newGame(_ sender: UIButton) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        devTeam()
         // Do any additional setup after loading the view.
     }
-    
+    func devTeam(){
+        version?.text = "\(GameModel.sharedInstance.version)"
+    }
 
     /*
     // MARK: - Navigation

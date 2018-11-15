@@ -18,16 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pix and Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOK-lF-KLf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pix and Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOK-lF-KLf">
                                 <rect key="frame" x="137" y="70" width="101" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ns-nN-EvJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ns-nN-EvJ">
                                 <rect key="frame" x="150" y="175" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="MainScreen"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
@@ -35,13 +33,28 @@
                                     <segue destination="BV1-FR-VrT" kind="show" id="xJd-TN-BXx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADC-Iw-cPE">
+                                <rect key="frame" x="126" y="110" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration" identifier="MainMenu"/>
+                        <constraints>
+                            <constraint firstItem="9ns-nN-EvJ" firstAttribute="centerY" secondItem="lgZ-zb-3Qb" secondAttribute="centerY" constant="-143.5" id="0WT-Ft-sj3"/>
+                            <constraint firstItem="yOK-lF-KLf" firstAttribute="centerX" secondItem="lgZ-zb-3Qb" secondAttribute="centerX" id="0al-Nh-GPh"/>
+                            <constraint firstItem="9ns-nN-EvJ" firstAttribute="centerX" secondItem="lgZ-zb-3Qb" secondAttribute="centerX" id="9l6-nh-zhy"/>
+                            <constraint firstItem="yOK-lF-KLf" firstAttribute="centerY" secondItem="lgZ-zb-3Qb" secondAttribute="centerY" constant="-253" id="PYC-Ln-bUU"/>
+                            <constraint firstItem="ADC-Iw-cPE" firstAttribute="centerY" secondItem="lgZ-zb-3Qb" secondAttribute="centerY" constant="-213" id="YYD-3A-MW6"/>
+                            <constraint firstItem="ADC-Iw-cPE" firstAttribute="centerX" secondItem="lgZ-zb-3Qb" secondAttribute="centerX" id="uJL-jQ-IbE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RZX-sC-bky"/>
                     </view>
                     <connections>
                         <outlet property="newGameButton" destination="9ns-nN-EvJ" id="c4z-yi-ii4"/>
+                        <outlet property="version" destination="ADC-Iw-cPE" id="PLO-sV-6VD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQ1-X8-y8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -115,17 +128,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfc-Yn-ULS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfc-Yn-ULS">
                                 <rect key="frame" x="151" y="104" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Quit Game"/>
                                 <connections>
                                     <segue destination="cXc-XM-f7f" kind="showDetail" id="f0C-P1-dok"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkp-2o-Lob">
-                                <rect key="frame" x="156" y="204" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkp-2o-Lob">
+                                <rect key="frame" x="156.5" y="142" width="62" height="30"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="showDetail" id="lsg-y0-2oN"/>
@@ -134,6 +145,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration" identifier="GiveUp"/>
+                        <constraints>
+                            <constraint firstItem="cfc-Yn-ULS" firstAttribute="centerY" secondItem="KMm-Gc-t7g" secondAttribute="centerY" constant="-214.5" id="VH7-Ue-8Ne"/>
+                            <constraint firstItem="cfc-Yn-ULS" firstAttribute="centerX" secondItem="KMm-Gc-t7g" secondAttribute="centerX" id="aQi-cp-FPi"/>
+                            <constraint firstItem="Dkp-2o-Lob" firstAttribute="centerY" secondItem="KMm-Gc-t7g" secondAttribute="centerY" constant="-176.5" id="bmH-Cg-5xs"/>
+                            <constraint firstItem="Dkp-2o-Lob" firstAttribute="centerX" secondItem="KMm-Gc-t7g" secondAttribute="centerX" id="ecp-JB-b70"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XhK-Qd-NHU"/>
                     </view>
                 </viewController>
@@ -197,7 +214,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qcU-Qe-dEs"/>
         <segue reference="lsg-y0-2oN"/>
         <segue reference="f0C-P1-dok"/>
     </inferredMetricsTieBreakers>
