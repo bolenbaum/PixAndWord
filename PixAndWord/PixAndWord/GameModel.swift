@@ -51,6 +51,12 @@ class GameModel {
         var filePathSend = filePathAlpha + file + ext
         return filePathSend
     }
+    func sendFilePath(filePath: String)-> String{
+        var ext = ".png"
+        var filePathAlpha = "Images/GameObjects/"
+        var filePathSend = filePathAlpha + filePath + ext
+        return filePathSend
+    }
     func nextLevel(){
         levNum += 1
     }

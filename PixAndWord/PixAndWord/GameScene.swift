@@ -64,6 +64,7 @@ class GameScene: SKScene{
                                               SKAction.removeFromParent()]))
         }
         addTiles()
+        //addLetters()
     }
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -119,7 +120,8 @@ class GameScene: SKScene{
     func addTiles(){
         let tile = SKSpriteNode(imageNamed: "Images/GameObjects/Tile.png")
         tile.setScale(0.07)
-        let yPos = 220
+        let yPos: CGFloat = 220
+        tile.position = CGPoint(x: 1.1, y: yPos)
         
        // tile.position =
         addChild(tile)
@@ -129,11 +131,24 @@ class GameScene: SKScene{
         tile.physicsBody?.contactTestBitMask = PhysicsCategory.letter
         tile.physicsBody?.collisionBitMask = PhysicsCategory.none
     }
+    func random() -> CGFloat {
+        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+    }
+
+    func randomat(first: CGFloat, second: CGFloat)-> CGFloat{
+        return random() * (second - first) + first
+    }
     func addLetters(){
+        let top:CGFloat = -80.0
+        let bot:CGFloat = -400.0
+        let right:CGFloat = 320.0
+        let left:CGFloat = -320.0
         var tex = GameModel.sharedInstance.wordToLetters(word: GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word)
         for i in stride(from: 0, to: tex.count - 1, by: 1){
             let letter = SKSpriteNode(imageNamed: GameModel.sharedInstance.sendFilePath(fileName: tex[i]))
             letter.setScale(0.07)
+            let yPos = randomat(first: top, second: bot)
+            let xPos = randomat(first: left, second: right)
             GameModel.sharedInstance.addRealLet()
             addChild(letter)
             letter.physicsBody = SKPhysicsBody(rectangleOf: letter.size)
