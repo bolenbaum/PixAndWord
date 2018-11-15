@@ -186,7 +186,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtW-ho-OZo">
-                                <rect key="frame" x="151" y="171" width="73" height="30"/>
+                                <rect key="frame" x="151" y="153" width="73" height="30"/>
                                 <state key="normal" title="Quit Game"/>
                                 <connections>
                                     <segue destination="cXc-XM-f7f" kind="show" id="yij-ui-QFf"/>
@@ -196,7 +196,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration" identifier="Hint"/>
                         <constraints>
-                            <constraint firstItem="UtW-ho-OZo" firstAttribute="centerY" secondItem="ALE-9p-R2e" secondAttribute="centerY" constant="-147.5" id="9BD-zd-EtE"/>
+                            <constraint firstItem="UtW-ho-OZo" firstAttribute="centerY" secondItem="ALE-9p-R2e" secondAttribute="centerY" constant="-165.5" id="0UN-Ri-fDa"/>
                             <constraint firstItem="UFR-01-4sL" firstAttribute="centerY" secondItem="ALE-9p-R2e" secondAttribute="centerY" constant="-281" id="Krx-QL-FR2"/>
                             <constraint firstItem="Q0h-Vj-Nqn" firstAttribute="centerX" secondItem="ALE-9p-R2e" secondAttribute="centerX" id="PMi-KZ-y0A"/>
                             <constraint firstItem="UFR-01-4sL" firstAttribute="centerX" secondItem="ALE-9p-R2e" secondAttribute="centerX" id="QI8-MH-100"/>
@@ -214,7 +214,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lsg-y0-2oN"/>
-        <segue reference="f0C-P1-dok"/>
+        <segue reference="S76-cf-eTe"/>
+        <segue reference="yij-ui-QFf"/>
     </inferredMetricsTieBreakers>
 </document>
