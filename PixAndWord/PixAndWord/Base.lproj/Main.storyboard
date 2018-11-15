@@ -197,6 +197,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="qcU-Qe-dEs"/>
         <segue reference="lsg-y0-2oN"/>
         <segue reference="f0C-P1-dok"/>
     </inferredMetricsTieBreakers>

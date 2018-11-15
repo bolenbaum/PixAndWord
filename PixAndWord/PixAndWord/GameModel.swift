@@ -47,7 +47,7 @@ class GameModel {
     func sendFilePath(fileName:Character)-> String{
         var file = "\(fileName)"
         var ext = ".png"
-        var filePathAlpha = "Assest.xcassets/Images/GameObjects/"
+        var filePathAlpha = "Images/GameObjects/"
         var filePathSend = filePathAlpha + file + ext
         return filePathSend
     }

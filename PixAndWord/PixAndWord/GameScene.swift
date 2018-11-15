@@ -117,7 +117,11 @@ class GameScene: SKScene{
         self.lastUpdateTime = currentTime
     }
     func addTiles(){
-        let tile = SKSpriteNode(imageNamed: "Assest.xcassets/Images/GameObjects/Tile.png")
+        let tile = SKSpriteNode(imageNamed: "Images/GameObjects/Tile.png")
+        tile.setScale(0.07)
+        let yPos = 220
+        
+       // tile.position =
         addChild(tile)
         tile.physicsBody = SKPhysicsBody(rectangleOf: tile.size)
         tile.physicsBody?.isDynamic = true;
@@ -129,12 +133,32 @@ class GameScene: SKScene{
         var tex = GameModel.sharedInstance.wordToLetters(word: GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word)
         for i in stride(from: 0, to: tex.count - 1, by: 1){
             let letter = SKSpriteNode(imageNamed: GameModel.sharedInstance.sendFilePath(fileName: tex[i]))
+            letter.setScale(0.07)
             GameModel.sharedInstance.addRealLet()
             addChild(letter)
             letter.physicsBody = SKPhysicsBody(rectangleOf: letter.size)
         }
     }
+    func snapToTile(letter: SKSpriteNode, tile: SKSpriteNode){
+        
+    }
 }
 extension GameScene: SKPhysicsContactDelegate{
-    
+    func didTouch(_ contact: SKPhysicsContact){
+        var first: SKPhysicsBody
+        var second: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            first = contact.bodyA
+            second = contact.bodyB
+        } else {
+            first = contact.bodyB
+            second = contact.bodyA
+        }
+        if ((first.categoryBitMask & PhysicsCategory.tile != 0) && (second.categoryBitMask & PhysicsCategory.letter != 0)) {
+            if let tile = first.node as? SKSpriteNode,
+                let letter = second.node as? SKSpriteNode {
+                    snapToTile(letter: letter, tile: tile)
+            }
+        }
+    }
 }
