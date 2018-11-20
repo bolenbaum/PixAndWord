@@ -15,7 +15,7 @@ class GameModel {
     var k = 0
     var levNum = 0
     var pool:[Tile] = []
-    let levels = [Level(levelNum: 1, wordForLevel: "apple", filePaths: [""]), Level(levelNum: 2, wordForLevel: "baseball", filePaths: [""]), Level(levelNum: 3, wordForLevel: "pokemon", filePaths: [""]), Level(levelNum: 4, wordForLevel: "turquoise", filePaths: [""])]
+    let levels = [Level(levelNum: 1, wordForLevel: "apple", filePaths: [""], loc: "e"), Level(levelNum: 2, wordForLevel: "baseball", filePaths: [""], loc: "s"), Level(levelNum: 3, wordForLevel: "pokemon", filePaths: [""], loc: "k"), Level(levelNum: 4, wordForLevel: "turquoise", filePaths: [""], loc: "t")]
     init(k: Int) {
         self.k = k
     }
@@ -49,7 +49,7 @@ class GameModel {
         //return newLetters
     }
     func getLevelNum()->Int{
-        return self.k
+        return self.levNum
     }
     func setLetters() -> String{
         var total = GameModel.sharedInstance.levels[levNum].word + setExtraTiles()

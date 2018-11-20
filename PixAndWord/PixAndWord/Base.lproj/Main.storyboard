@@ -158,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="149.59999999999999" y="791.15442278860576"/>
         </scene>
-        <!--View Controller-->
+        <!--Hint View Controller-->
         <scene sceneID="gfc-fx-jcU">
             <objects>
-                <viewController id="sCy-bM-hUg" sceneMemberID="viewController">
+                <viewController id="sCy-bM-hUg" customClass="HintViewController" customModule="PixAndWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ALE-9p-R2e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +207,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rbf-rR-c4v"/>
                     </view>
+                    <connections>
+                        <outlet property="hint" destination="YhC-d3-xQ8" id="lYu-SD-dSc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FO-9K-674" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

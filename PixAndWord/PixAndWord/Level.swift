@@ -13,13 +13,15 @@ class Level{
     var hasBeaten = false
     let picNum = 4
     var picLoc: [String]
+    var loc = ""
     
     func addPicFilePath(filePath:String){
         picLoc.append(filePath)
     }
-    init(levelNum: Int, wordForLevel:String, filePaths: [String]){
+    init(levelNum: Int, wordForLevel:String, filePaths: [String], loc: String){
         self.levelNum = levelNum
         self.word = wordForLevel
         self.picLoc = filePaths
+        self.loc = loc
     }
 }
