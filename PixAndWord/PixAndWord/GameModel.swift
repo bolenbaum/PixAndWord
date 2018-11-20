@@ -15,7 +15,7 @@ class GameModel {
     var k = 0
     var levNum = 0
     var pool:[Tile] = []
-    let levels = [Level(levelNum: 1, wordForLevel: "apple", filePaths: [""], loc: "e"), Level(levelNum: 2, wordForLevel: "baseball", filePaths: [""], loc: "s"), Level(levelNum: 3, wordForLevel: "pokemon", filePaths: [""], loc: "k"), Level(levelNum: 4, wordForLevel: "turquoise", filePaths: [""], loc: "t")]
+    let levels = [Level(levelNum: 1, wordForLevel: "apple", filePaths: ["apple1.jpg", "apple2.jpg", "apple3.jpg", "apples4.jpg"], loc: "e"), Level(levelNum: 2, wordForLevel: "baseball", filePaths: [""], loc: "s"), Level(levelNum: 3, wordForLevel: "pokemon", filePaths: [""], loc: "k"), Level(levelNum: 4, wordForLevel: "turquoise", filePaths: [""], loc: "t")]
     init(k: Int) {
         self.k = k
     }
@@ -72,6 +72,8 @@ class GameModel {
         return filePathSend
     }
     func nextLevel(){
-        levNum += 1
+        if self.k < 3{
+            levNum += 1
+        }
     }
 }

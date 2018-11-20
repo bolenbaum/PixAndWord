@@ -62,7 +62,7 @@ class GameScene: SKScene{
         //addChild(counter!)
         //runTimer()
         //updateTimer()
-        
+        addPix()
         addTiles()
         addLetters()
     }
@@ -87,6 +87,20 @@ class GameScene: SKScene{
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+    }
+    func addPix(){
+        for i in stride(from: 0, to: 4, by: 1) {
+            let pic = SKSpriteNode(imageNamed: "Images/Pictures/" + GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].picLoc[i])
+            pic.setScale(0.05)
+            pic.zPosition = 2
+            if i < 2{
+                pic.position = CGPoint(x: -150 + i * 200, y: 520)
+            }
+            else{
+                pic.position = CGPoint(x: -120 + (i - 2) * 230, y: 350)
+            }
+            addChild(pic)
+        }
     }
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
@@ -149,7 +163,7 @@ class GameScene: SKScene{
         return initial
     }
     func addLetters(){
-        let top:CGFloat = -80.0
+        let top:CGFloat = -100.0
         let bot:CGFloat = -400.0
         let right:CGFloat = 320.0
         let left:CGFloat = -320.0
@@ -160,7 +174,6 @@ class GameScene: SKScene{
             letter.zPosition = 3
             let yPos = randomat(first: top, second: bot)
             let xPos = randomat(first: left, second: right)
-            GameModel.sharedInstance.addRealLet()
             addChild(letter)
             letter.physicsBody = SKPhysicsBody(rectangleOf: letter.size)
         }

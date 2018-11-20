@@ -27,7 +27,7 @@ class HintViewController: UIViewController {
             hint.text = String("The word is \(first)\(space)\(last)")
         }
         else if GameModel.sharedInstance.k == 1{
-            hint.text = "The word has d in it."
+            hint.text = "The word has \(GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].loc) in it."
         }
         else if GameModel.sharedInstance.k == 2{
             let message = "Git Gud"
