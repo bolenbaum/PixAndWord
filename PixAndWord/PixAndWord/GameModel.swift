@@ -40,7 +40,7 @@ class GameModel {
     }
     func setExtraTiles() -> String {
         var n = GameModel.sharedInstance.levels[
-            levNum].word.count
+            levNum].word.count - 1
         var newLetters: [Tile] = []
         var size: Int = n + k
         let letters = "abcdefghijklmnopqrstuvwxyz"
@@ -53,8 +53,11 @@ class GameModel {
     }
     func setLetters() -> String{
         var total = GameModel.sharedInstance.levels[levNum].word + setExtraTiles()
-        total = randoLetters(size: total.count, alter: total)
-        return total
+        var final = wordToLetters(word: total)
+        final.shuffle()
+        var retcon = String(final)
+        //total = randoLetters(size: total.count, alter: total)
+        return retcon
     }
     func sendFilePath(fileName:Character)-> String{
         var file = "\(fileName)"

@@ -92,7 +92,6 @@ class GameScene: SKScene{
         for i in stride(from: 0, to: 4, by: 1) {
             let pic = SKSpriteNode(imageNamed: "Images/Pictures/" + GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].picLoc[i])
             pic.setScale(0.05)
-            
             pic.zPosition = 2
             if i < 2{
                 pic.position = CGPoint(x: -150 + i * 200, y: 520)
