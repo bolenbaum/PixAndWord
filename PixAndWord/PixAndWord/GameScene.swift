@@ -27,6 +27,7 @@ class GameScene: SKScene{
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     private var counter: SKLabelNode!
+    var letterTouched = false
     var counterCount: Int = 4000
     var time = Timer()
     var isTimerRunning = false
@@ -38,9 +39,11 @@ class GameScene: SKScene{
         counter.text = "\(counterCount)" //This will update the label.
     }
     override func sceneDidLoad() {
-        var letterTouched = false
         //counter = SKLabelNode(fontNamed: "Chalkduster")
         //counter.text = "\(counterCount)"
+        let background = SKSpriteNode(imageNamed: "Images/GameObjects/Background.jpg")
+        background.position = CGPoint(x: 0, y: 400)
+        background.zPosition = 1
         self.lastUpdateTime = 0
         let outOBounds = SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsBody = outOBounds
@@ -72,7 +75,8 @@ class GameScene: SKScene{
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
+        //let touch = touches
+        
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -102,6 +106,7 @@ class GameScene: SKScene{
         for i in stride(from: 0, to: GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word.count, by: 1){
             let tile = SKSpriteNode(imageNamed: "Images/GameObjects/Tile.png")
             tile.setScale(0.06)
+            tile.zPosition = 2
             let tail = Double(tile.size.width)
             var stop = GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word.count
             let yPos: CGFloat = 220
@@ -151,6 +156,7 @@ class GameScene: SKScene{
         for i in stride(from: 0, to: tex.count, by: 1){
             let letter = SKSpriteNode(imageNamed: GameModel.sharedInstance.sendFilePath(fileName: tex[i]))
             letter.setScale(0.06)
+            letter.zPosition = 3
             let yPos = randomat(first: top, second: bot)
             let xPos = randomat(first: left, second: right)
             GameModel.sharedInstance.addRealLet()
