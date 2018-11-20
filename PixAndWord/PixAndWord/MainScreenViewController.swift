@@ -15,6 +15,7 @@ class MainScreenViewController: UIViewController {
     @IBOutlet weak var version: UILabel!
     
     @IBAction func newGame(_ sender: UIButton) {
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

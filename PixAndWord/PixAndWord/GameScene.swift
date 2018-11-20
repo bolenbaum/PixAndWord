@@ -11,13 +11,15 @@ import GameplayKit
 
 class GameScene: SKScene{
     override func didMove(to view: SKView) {
+        let gestureRec = UIPanGestureRecognizer(target: self, action: #selector(moveLetters))
+        view.addGestureRecognizer(gestureRec)
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
     }
     struct  PhysicsCategory{
         static let none      : UInt32 = 0
         static let all       : UInt32 = UInt32.max
-        static let tile   : UInt32 = 0b1       // 1
+        static let tile   : UInt32 = 0b1
         static let letter: UInt32 = 0b10
     }
     var entities = [GKEntity]()
@@ -156,6 +158,14 @@ class GameScene: SKScene{
         }
     }
     func snapToTile(letter: SKSpriteNode, tile: SKSpriteNode){
+        
+    }
+    @objc func moveLetters(recognizer: UIPanGestureRecognizer){
+        let viewLocation = recognizer.location(in: view)
+        let sceneLocation = convertPoint(fromView: viewLocation)
+        let moveAction = SKAction.move(to: sceneLocation, duration: 1)
+    }
+    func removeLetter(){
         
     }
 }
