@@ -38,9 +38,12 @@ class GameScene: SKScene{
         counter.text = "\(counterCount)" //This will update the label.
     }
     override func sceneDidLoad() {
+        var letterTouched = false
         //counter = SKLabelNode(fontNamed: "Chalkduster")
         //counter.text = "\(counterCount)"
         self.lastUpdateTime = 0
+        let outOBounds = SKPhysicsBody(edgeLoopFrom: self.frame)
+        self.physicsBody = outOBounds
         //letter spacing test
         //for eight letters
         //GameModel.sharedInstance.nextLevel()
@@ -138,7 +141,6 @@ class GameScene: SKScene{
             initial = -67.1 - (metric * final)
         }
         return initial
-        //else if GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word.count ==
     }
     func addLetters(){
         let top:CGFloat = -80.0
