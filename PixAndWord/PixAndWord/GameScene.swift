@@ -42,8 +42,9 @@ class GameScene: SKScene{
         //counter = SKLabelNode(fontNamed: "Chalkduster")
         //counter.text = "\(counterCount)"
         let background = SKSpriteNode(imageNamed: "Images/GameObjects/Background.jpg")
-        background.position = CGPoint(x: 0, y: 400)
+        background.position = CGPoint(x: 0, y: 100)
         background.zPosition = 1
+        addChild(background)
         self.lastUpdateTime = 0
         let outOBounds = SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsBody = outOBounds
