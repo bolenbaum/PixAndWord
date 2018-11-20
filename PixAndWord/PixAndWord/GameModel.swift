@@ -34,16 +34,27 @@ class GameModel {
             pool.append(add)
         }
     }
-    func setExtraTiles() -> Array<Tile> {
+    func randoLetters(size: Int, alter: String)->String{
+        var send = String((0...size).map{ _ in alter.randomElement()!})
+        return send
+    }
+    func setExtraTiles() -> String {
         var n = GameModel.sharedInstance.levels[
-            levNum].word.count - 1
+            levNum].word.count
         var newLetters: [Tile] = []
         var size: Int = n + k
-        
-        return newLetters
+        let letters = "abcdefghijklmnopqrstuvwxyz"
+        var rando = randoLetters(size: size, alter: letters)
+        return rando
+        //return newLetters
     }
-    func getLevelNum(){
-        
+    func getLevelNum()->Int{
+        return self.k
+    }
+    func setLetters() -> String{
+        var total = GameModel.sharedInstance.levels[levNum].word + setExtraTiles()
+        total = randoLetters(size: total.count, alter: total)
+        return total
     }
     func sendFilePath(fileName:Character)-> String{
         var file = "\(fileName)"

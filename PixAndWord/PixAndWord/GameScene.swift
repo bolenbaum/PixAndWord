@@ -142,8 +142,8 @@ class GameScene: SKScene{
         let bot:CGFloat = -400.0
         let right:CGFloat = 320.0
         let left:CGFloat = -320.0
-        var tex = GameModel.sharedInstance.wordToLetters(word: GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word)
-        for i in stride(from: 0, to: tex.count - 1, by: 1){
+        var tex = GameModel.sharedInstance.wordToLetters(word: GameModel.sharedInstance.setLetters())
+        for i in stride(from: 0, to: tex.count, by: 1){
             let letter = SKSpriteNode(imageNamed: GameModel.sharedInstance.sendFilePath(fileName: tex[i]))
             letter.setScale(0.07)
             let yPos = randomat(first: top, second: bot)
