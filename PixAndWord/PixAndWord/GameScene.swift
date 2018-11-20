@@ -66,28 +66,6 @@ class GameScene: SKScene{
         addTiles()
         addLetters()
     }
-    func touchDown(atPoint pos : CGPoint) {
-        
-    }
-    func touchMoved(toPoint pos : CGPoint) {
-        
-    }
-    func touchUp(atPoint pos : CGPoint) {
-        
-    }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //let touch = touches
-        
-    }
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
     func addPix(){
         for i in stride(from: 0, to: 4, by: 1) {
             let pic = SKSpriteNode(imageNamed: "Images/Pictures/" + GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].picLoc[i])
