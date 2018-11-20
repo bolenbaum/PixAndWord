@@ -41,6 +41,13 @@ class GameScene: SKScene{
         //counter = SKLabelNode(fontNamed: "Chalkduster")
         //counter.text = "\(counterCount)"
         self.lastUpdateTime = 0
+        //letter spacing test
+        //for eight letters
+        //GameModel.sharedInstance.nextLevel()
+        //for seven letters
+        //GameModel.sharedInstance.levNum = 2
+        //for max letters
+        //GameModel.sharedInstance.levNum = 3
         //counter?.fontSize = 12
         //counter?.fontColor = SKColor.white
         //counter?.position = CGPoint(x: frame.midX, y: 160)
@@ -90,10 +97,12 @@ class GameScene: SKScene{
     }
     func addTiles(){
         for i in stride(from: 0, to: GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word.count, by: 1){
-            let ini = CGFloat(-141.1)
             let tile = SKSpriteNode(imageNamed: "Images/GameObjects/Tile.png")
-            tile.setScale(0.07)
+            tile.setScale(0.06)
+            let tail = Double(tile.size.width)
+            var stop = GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word.count
             let yPos: CGFloat = 220
+            var ini = CGFloat(setInit(metric: tail, amount: stop))
             if i > 0{
                 tile.position = CGPoint(x: ini + CGFloat(Double(tile.size.width) * Double(i)), y: yPos)
                 
@@ -116,6 +125,21 @@ class GameScene: SKScene{
     func randomat(first: CGFloat, second: CGFloat)-> CGFloat{
         return random() * (second - first) + first
     }
+    func setInit(metric: Double, amount: Int)->Double{
+        var final = Double(amount - 6)
+        var initial = -141.1
+        if (final < 2 && final > 0){
+            initial = -141.1 - (metric * final)
+        }
+        else if final == 2{
+            initial = -101.1 - (metric * final)
+        }
+        else if final > 2{
+            initial = -67.1 - (metric * final)
+        }
+        return initial
+        //else if GameModel.sharedInstance.levels[GameModel.sharedInstance.levNum].word.count ==
+    }
     func addLetters(){
         let top:CGFloat = -80.0
         let bot:CGFloat = -400.0
@@ -124,7 +148,7 @@ class GameScene: SKScene{
         var tex = GameModel.sharedInstance.wordToLetters(word: GameModel.sharedInstance.setLetters())
         for i in stride(from: 0, to: tex.count, by: 1){
             let letter = SKSpriteNode(imageNamed: GameModel.sharedInstance.sendFilePath(fileName: tex[i]))
-            letter.setScale(0.07)
+            letter.setScale(0.06)
             let yPos = randomat(first: top, second: bot)
             let xPos = randomat(first: left, second: right)
             GameModel.sharedInstance.addRealLet()
